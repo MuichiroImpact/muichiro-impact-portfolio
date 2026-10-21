@@ -168,11 +168,40 @@ textarea{min-height:120px;resize:vertical}
 .contact h2{font-size:clamp(3rem,9vw,7.4rem);font-weight:800;max-width:12ch;margin:0 auto 20px}
 .contact .intro{color:#d3efea;max-width:44ch;margin:0 auto 46px;font-size:1.15rem}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:860px;margin:auto;text-align:left}
-.pc{border-radius:var(--r-lg);padding:32px;display:flex;flex-direction:column;gap:16px;align-items:flex-start;border:1px solid #fff}
-.pc:nth-child(1){background:linear-gradient(145deg,#bfe8e0,#f2fbf9)}
-.pc:nth-child(2){background:linear-gradient(145deg,var(--sky),#d4e6ff)}
-.pc b{font:700 1.5rem var(--display);word-break:break-all}
-.pc span{font-size:.95rem;color:var(--ink);opacity:.75}
+.pc{position:relative;display:flex;flex-direction:column;gap:6px;align-items:flex-start;padding:26px 28px;border-radius:var(--r-lg);background:rgba(255,255,255,.94);color:var(--ink);text-decoration:none;border:1px solid #fff;box-shadow:0 24px 40px -26px rgba(0,0,0,.5);transition:transform .2s,box-shadow .2s}
+.pc:hover{transform:translateY(-5px);box-shadow:0 30px 44px -24px rgba(0,0,0,.55)}
+.pc .ico{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;color:#fff;margin-bottom:10px}
+.pc .ico svg{width:28px;height:28px;fill:currentColor}
+.pc small{font-size:.92rem;color:var(--muted);font-weight:600}
+.pc b{font:700 1.3rem var(--display);word-break:break-word;letter-spacing:-.01em}
+.pc .go{margin-top:14px;font-weight:700;font-size:.95rem;padding:9px 18px;border-radius:var(--r-pill);background:var(--ink);color:#fff;transition:background .2s}
+.pc:hover .go{background:var(--accent)}
+.ico.dc{background:#5865f2}.ico.ig{background:linear-gradient(45deg,#f9a03f,#e1306c 55%,#7b3fe4)}.ico.yt{background:#ff2d2d}.ico.ml{background:var(--accent)}
+.flinks{display:flex;gap:18px}.flinks a{color:var(--ink);font-weight:600;text-decoration:none}.flinks a:hover{text-decoration:underline}
+
+/* about: random notes */
+.notes{margin-top:22px;background:#fffef8;border:2px dashed #8fd0c6;border-radius:var(--r-lg);padding:26px 30px;transform:rotate(-1deg)}
+.notes h3{font-size:1.5rem;margin-bottom:12px}
+.notes ul{list-style:none;display:grid;gap:10px}
+.notes li{position:relative;padding-left:1.7em;color:var(--muted)}
+.notes li::before{content:"✦";position:absolute;left:0;color:var(--accent)}
+
+/* budget meter */
+.meter-box{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:16px 20px 12px}
+.meter-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.meter-top output{font:800 1.9rem var(--display);letter-spacing:-.02em}
+.meter-top span{color:var(--muted);font-weight:600;font-size:.95rem}
+.track{position:relative;height:44px;display:flex;align-items:center;--p:.15;--fill:linear-gradient(90deg,var(--accent) 0 calc(14px + (100% - 28px) * var(--p)),#cfe6e1 0)}
+.track input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:28px;padding:0;border:0;background:transparent;cursor:pointer;box-shadow:none}
+.track input[type=range]:focus{box-shadow:none}
+.track input[type=range]:focus-visible{outline:3px solid var(--accent);outline-offset:6px;border-radius:99px}
+.track input[type=range]::-webkit-slider-runnable-track{height:12px;border-radius:99px;background:var(--fill)}
+.track input[type=range]::-moz-range-track{height:12px;border-radius:99px;background:var(--fill)}
+.track input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;margin-top:-8px;border-radius:50%;background:#fff;border:5px solid var(--accent);box-shadow:0 4px 10px -2px rgba(15,59,60,.5);cursor:grab;transition:transform .15s}
+.track input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:5px solid var(--accent);box-shadow:0 4px 10px -2px rgba(15,59,60,.5);cursor:grab;transition:transform .15s}
+.track input[type=range]:active::-webkit-slider-thumb{transform:scale(1.12);cursor:grabbing}
+.track input[type=range]:active::-moz-range-thumb{transform:scale(1.12);cursor:grabbing}
+.ends{display:flex;justify-content:space-between;color:var(--muted);font-size:.85rem;font-weight:600}
 
 footer{padding:40px 0 50px;border-top:1px solid var(--line);background:rgba(255,255,255,.55)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:var(--muted);font-size:.95rem}
@@ -305,23 +334,34 @@ body.no-mist .petals{opacity:0}
           <circle cx="292" cy="150" r="44" fill="#fffef8" opacity=".85"/>
           <text x="38" y="170" font-size="96" font-weight="700" fill="#fff" opacity=".55" font-family="'Noto Serif JP','Yu Mincho','Hiragino Mincho ProN',serif">霞</text>
           <path d="M0 400L70 330 130 380 200 310 270 385 340 335 400 390V520H0Z" fill="#3fa89c" opacity=".55"/>
-          <g fill="#15575a">
-            <rect x="150" y="300" width="100" height="220"/>
-            <rect x="150" y="290" width="14" height="12"/><rect x="172" y="290" width="14" height="12"/><rect x="214" y="290" width="14" height="12"/><rect x="236" y="290" width="14" height="12"/>
-            <rect x="92" y="262" width="52" height="258"/><path d="M84 262L118 196 152 262Z"/>
-            <rect x="256" y="262" width="52" height="258"/><path d="M248 262L282 196 316 262Z"/>
-            <rect x="176" y="236" width="48" height="70"/><path d="M168 238L200 164 232 238Z"/>
-            <rect x="30" y="340" width="52" height="180"/><path d="M24 342L56 290 88 342Z"/>
-            <rect x="318" y="340" width="52" height="180"/><path d="M312 342L344 290 376 342Z"/>
-            <path d="M200 164V140" stroke="#15575a" stroke-width="3"/><path d="M200 140L222 148 200 156Z"/>
+          <g fill="#1b6a66" opacity=".9">
+            <path d="M44 372L60 404H28ZM44 392L64 430H24ZM44 414L68 462H20Z"/><rect x="41" y="458" width="6" height="40"/>
+            <path d="M356 392L372 424H340ZM356 412L376 450H336ZM356 434L380 482H332Z"/><rect x="353" y="478" width="6" height="30"/>
           </g>
-          <g fill="#fff4c9">
-            <rect x="194" y="258" width="12" height="20" rx="6"/><rect x="112" y="300" width="12" height="20" rx="6"/><rect x="276" y="300" width="12" height="20" rx="6"/>
-            <rect x="190" y="360" width="20" height="30" rx="10"/><rect x="46" y="380" width="10" height="16" rx="5"/><rect x="344" y="380" width="10" height="16" rx="5"/>
+          <path d="M70 520C96 476 108 446 122 410H278C292 446 304 476 330 520Z" fill="#6fb3aa"/>
+          <path d="M98 482H302M108 452H292M116 430H284" stroke="#4f9088" stroke-width="1.5" opacity=".7" fill="none"/>
+          <g fill="#f6fbf9" stroke="#bcd9d2" stroke-width="1">
+            <rect x="126" y="366" width="148" height="46"/><rect x="148" y="300" width="104" height="46"/>
+            <rect x="168" y="246" width="64" height="38"/><rect x="178" y="196" width="44" height="32"/>
+          </g>
+          <g fill="#15575a" stroke="#2f8f86" stroke-width="1.2" stroke-linejoin="round">
+            <path d="M92 363C116 359 138 346 148 338H252C262 346 284 359 308 363C286 376 230 377 200 377C170 377 114 376 92 363Z"/><path d="M116 299C140 295 148 284 158 276H242C252 284 260 295 284 299C262 312 230 313 200 313C170 313 138 312 116 299Z"/><path d="M138 245C162 241 158 230 168 222H232C242 230 238 241 262 245C240 258 230 259 200 259C170 259 160 258 138 245Z"/><path d="M152 195C176 191 180 176 190 168H210C220 176 224 191 248 195C226 208 230 209 200 209C170 209 174 208 152 195Z"/>
+          </g>
+          <g fill="#f2d98a">
+            <path d="M188 170c-6-3-7-10-3-16 1 5 4 8 7 9z"/><path d="M212 170c6-3 7-10 3-16-1 5-4 8-7 9z"/>
+          </g>
+          <g fill="#ffeeb0">
+            <rect x="140" y="380" width="9" height="16" rx="2"/><rect x="160" y="380" width="9" height="16" rx="2"/>
+            <rect x="231" y="380" width="9" height="16" rx="2"/><rect x="251" y="380" width="9" height="16" rx="2"/>
+            <rect x="190" y="384" width="20" height="28" rx="10"/>
+            <rect x="162" y="316" width="8" height="14" rx="2"/><rect x="184" y="316" width="8" height="14" rx="2"/>
+            <rect x="208" y="316" width="8" height="14" rx="2"/><rect x="230" y="316" width="8" height="14" rx="2"/>
+            <rect x="182" y="257" width="8" height="12" rx="2"/><rect x="196" y="257" width="8" height="12" rx="2"/><rect x="210" y="257" width="8" height="12" rx="2"/>
+            <rect x="190" y="207" width="8" height="11" rx="2"/><rect x="204" y="207" width="8" height="11" rx="2"/>
           </g>
           <g filter="url(#soft)" fill="#fff">
-            <ellipse class="band" cx="140" cy="400" rx="190" ry="34" opacity=".8"/>
-            <ellipse class="band b2" cx="290" cy="450" rx="210" ry="38" opacity=".9"/>
+            <ellipse class="band" cx="140" cy="456" rx="190" ry="30" opacity=".75"/>
+            <ellipse class="band b2" cx="290" cy="486" rx="210" ry="34" opacity=".85"/>
             <ellipse class="band" cx="200" cy="505" rx="260" ry="42"/>
             <ellipse class="band b2" cx="190" cy="250" rx="120" ry="16" opacity=".55"/>
           </g>
@@ -381,6 +421,17 @@ body.no-mist .petals{opacity:0}
           <h3>✦ Gaming visuals</h3>
           <p>I also experiment with stream thumbnails and gaming artwork, with bold focal points, colour and energetic compositions.</p>
         </div>
+        <div class="notes">
+          <h3>☁︎ Random notes about my work</h3>
+          <ul>
+            <li>I like builds you can recognise from across the map. If a landmark needs a sign to explain it, I keep going.</li>
+            <li>Thumbnails get one big focal point and one loud title, then I add glow until it feels right.</li>
+            <li>Mist, blossoms and castles keep sneaking into everything I make.</li>
+            <li>I make Minecraft thumbnails and builds for servers like Sigma SMP.</li>
+            <li>I also make live thumbnails for Valorant, Genshin Impact and Wuthering Waves streams.</li>
+            <li>Between projects I share giveaways and clips on my socials.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -402,9 +453,18 @@ body.no-mist .petals{opacity:0}
             <option>Minecraft Build</option><option>YouTube Thumbnail</option><option>Gaming Graphic / Edit</option><option>Logo / Banner</option><option>Other</option>
           </select></div>
         <div class="full"><label for="fDetails">Project details *</label><textarea id="fDetails" required></textarea></div>
-        <div><label for="fBudget">Your budget (USD)</label><div class="money"><span>$</span><input id="fBudget" type="number" min="0" value="10"></div></div>
+        <div class="full">
+          <label for="fBudget">Your budget (USD)</label>
+          <div class="meter-box">
+            <div class="meter-top"><output id="budgetOut" for="fBudget">$10</output><span id="budgetTier">Small project</span></div>
+            <div class="track">
+              <input type="range" id="fBudget" min="0" max="100" step="1" value="15">
+            </div>
+            <div class="ends"><span>$5</span><span>$500+</span></div>
+          </div>
+        </div>
         <div><label for="fDeadline">Deadline (optional)</label><input id="fDeadline" type="date"></div>
-        <div class="full"><label for="fContact">Your Discord / contact *</label><input id="fContact" required></div>
+        <div><label for="fContact">Your Discord / contact *</label><input id="fContact" required></div>
         <div class="full"><label for="fOther">Other information (optional)</label><textarea id="fOther" style="min-height:80px"></textarea></div>
         <div class="full btns">
           <button class="btn accent" type="submit">Copy request ↗</button>
@@ -419,10 +479,24 @@ body.no-mist .petals{opacity:0}
     <svg class="bough contact-bough" viewBox="0 0 540 320" aria-hidden="true"><use href="#boughG"/></svg>
     <div class="wrap contact">
       <h2>Let's make something cool.</h2>
-      <p class="intro">Got a project in mind? For commissions or collaboration, send me an email or reach out on Discord.</p>
+      <p class="intro">Got a project in mind? For commissions or collaboration, message me on Discord or Instagram, or send an email.</p>
       <div class="pair">
-        <div class="pc"><span>♡ Discord</span><b id="dUser"></b><a class="btn solid" data-discord target="_blank" rel="noopener">Join my Discord server ↗</a></div>
-        <div class="pc"><span>✧ Email</span><b id="eMail"></b><a class="btn solid" id="eBtn">Email me ↗</a></div>
+        <a class="pc" data-discord target="_blank" rel="noopener">
+          <span class="ico dc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6c2-1.3 4-2 7-2s5 .7 7 2c1.6 3 2.4 6.2 2.2 10-1.8 1.4-3.5 2.2-5 2.6l-1-1.8c.8-.2 1.5-.5 2.1-.9-.3-.2-.6-.4-.9-.6-3.3 1.5-6.7 1.5-10 0-.3.2-.6.4-.9.6.6.4 1.3.7 2.1.9l-1 1.8c-1.5-.4-3.2-1.2-5-2.6C2.600 12.200 3.400 9 5 6Z"/><circle cx="9" cy="12.5" r="1.8" fill="#5865f2"/><circle cx="15" cy="12.5" r="1.8" fill="#5865f2"/></svg></span>
+          <small>Discord</small><b id="dUser"></b><span class="go">Join my Discord server ↗</span>
+        </a>
+        <a class="pc" data-insta target="_blank" rel="noopener">
+          <span class="ico ig"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3"/></svg></span>
+          <small>Instagram</small><b id="iUser"></b><span class="go">Follow on Instagram ↗</span>
+        </a>
+        <a class="pc" data-yt target="_blank" rel="noopener">
+          <span class="ico yt"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.2v5.6l5-2.8z" fill="#ff2d2d"/></svg></span>
+          <small>YouTube</small><b id="yUser"></b><span class="go">Watch on YouTube ↗</span>
+        </a>
+        <a class="pc" id="eBtn">
+          <span class="ico ml"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 8l8 5.5L20 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <small>Email</small><b id="eMail"></b><span class="go">Email me ↗</span>
+        </a>
       </div>
     </div>
   </section>
@@ -432,6 +506,7 @@ body.no-mist .petals{opacity:0}
 <footer>
   <div class="wrap">
     <span><b>✦ Muichiro Impact</b> · Gaming portfolio</span>
+    <span class="flinks"><a data-discord target="_blank" rel="noopener">Discord</a><a data-insta target="_blank" rel="noopener">Instagram</a><a data-yt target="_blank" rel="noopener">YouTube</a></span>
     <span>Made with mist &amp; pixels ☁︎ · <span id="fMail"></span></span>
   </div>
 </footer>
@@ -454,7 +529,11 @@ body.no-mist .petals{opacity:0}
 const SITE = {
   email: "aaryanjaiswal485@gmail.com",
   discordUser: "muichiroipmact009",
-  discordInvite: "https://discord.gg/REPLACE_WITH_YOUR_INVITE"   // your "Join Discord" link
+  discordInvite: "https://discord.gg/QvD48ETzb",
+  instagram: "https://www.instagram.com/muichiroimpact14/",
+  instagramUser: "muichiroimpact14",
+  youtube: "https://www.youtube.com/@MuichiroFPS14",
+  youtubeName: "MuichiroFPS"
 };
 
 const SHOW_UNFINISHED = false;   // true = also show projects that have no image yet (soft placeholders)
@@ -517,6 +596,10 @@ $('#eMail').textContent = SITE.email;
 $('#fMail').textContent = SITE.email;
 $('#eBtn').href = 'mailto:' + SITE.email;
 document.querySelectorAll('[data-discord]').forEach(a => a.href = SITE.discordInvite);
+document.querySelectorAll('[data-insta]').forEach(a => a.href = SITE.instagram);
+document.querySelectorAll('[data-yt]').forEach(a => a.href = SITE.youtube);
+$('#iUser').textContent = '@' + SITE.instagramUser;
+$('#yUser').textContent = SITE.youtubeName;
 
 /* falling blossom petals */
 const petals = $('.petals');
@@ -573,6 +656,25 @@ mistBtn.addEventListener('click', () => {
   document.body.classList.toggle('no-mist', !on);
 });
 
+/* budget meter (draggable bar) */
+const budgetEl = $('#fBudget'), out = $('#budgetOut'), tierEl = $('#budgetTier');
+const TIERS = [[8,'A little something'],[15,'Small project'],[30,'Solid project'],[60,'Big project'],[150,'Dream project'],[Infinity,'Go all out']];
+function dollars(v){
+  if(v >= 100) return 500;
+  const d = 5 * Math.pow(100, v / 100);
+  return d < 20 ? Math.round(d) : d < 100 ? Math.round(d / 5) * 5 : Math.round(d / 10) * 10;
+}
+function updateBudget(){
+  const v = +budgetEl.value, d = dollars(v);
+  const t = TIERS.find(t => d < t[0]);
+  out.textContent = '$' + d + (v >= 100 ? '+' : '');
+  tierEl.textContent = t[1];
+  budgetEl.parentElement.style.setProperty('--p', v / 100);
+  budgetEl.setAttribute('aria-valuetext', out.textContent + ', ' + t[1]);
+}
+budgetEl.addEventListener('input', updateBudget);
+updateBudget();
+
 /* request form: build text, copy to clipboard */
 const form = $('#reqForm'), status = $('#status');
 form.addEventListener('submit', async e => {
@@ -590,7 +692,7 @@ form.addEventListener('submit', async e => {
     'Name: ' + v('fName'),
     'Type: ' + v('fType'),
     'Details: ' + v('fDetails'),
-    'Budget: $' + (v('fBudget') || '0'),
+    'Budget: ' + $('#budgetOut').textContent,
     'Deadline: ' + (v('fDeadline') || 'None'),
     'Contact: ' + v('fContact'),
     'Other: ' + (v('fOther') || 'None')
